@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%- include _head  %>
+</head>
+<body >
+	<div class="page_index page_reg">
+        <h6>一个卡牌爱好者独立制作的<b>炉石传说</b>山寨网页版</h6>
+        <h1>山寨炉石</h1>
+        <h5>也许你可以试试这里不一样的味道</h5>
+        <div class="login">
+            <label>邮箱：</label>
+            <input class="text" id="txt_mail" />
+            <label>密码：</label>
+            <input id="txt_psw" class="text" type="password"/>
+            <label>邀请码：</label>
+            <input id="txt_code" class="text"/>
+            <div class="btn" onclick="reg()">注册</div>
+            <a href="/">登陆</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function reg() {
+            var n = $("#txt_mail").val();
+            var p = $("#txt_psw").val();
+            var c = $("#txt_code").val();
+            if (!r.validate("邮箱", n, ["noempty", "email"]))
+                return;
+            if (!r.validate("密码", p, ["noempty"]))
+                return;
+            if (!r.validate("邀请码", c, ["noempty"]))
+                return;
+
+            r.cuser.reg(n, p, c, function () {
+                location = "/";
+            });
+        };
+    </script>
+</body>
+</html>

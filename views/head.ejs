@@ -1,0 +1,13 @@
+<div class="page_head">
+    <h1>山寨炉石</h1>
+    <h6>一个卡牌爱好者独立制作的<b>炉石传说</b>山寨网页版</h6>
+    <div class="in" onclick="logout()">登出</div>
+    <div ><%=user.name%></div>
+    <script type="text/javascript">
+        function logout() {
+            r.cuser.logout(function () {
+                location = "/";
+            });
+        };
+    </script>
+</div>

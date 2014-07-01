@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%- include _head  %>
+</head>
+<body >
+	<%- include head  %>
+    <div class="page_prompt">
+        <h1>对战模式</h1>
+        <a href="/" class="in">返回</a>
+    </div>
+    <div class="page_ready">
+       <div class="card_group">
+           <h1>选择套牌</h1>
+           <div class="card selected" job="圣骑士"><div class="job job1"></div><span>基本套牌</span></div>
+           <div class="card" job="潜行者"><div class="job job2"></div><span>基本套牌</span></div>
+           <div class="card" job="萨满"><div class="job job3"></div><span>基本套牌</span></div>
+           <div class="card" job="猎人"><div class="job job4"></div><span>基本套牌</span></div>
+           <div class="card" job="德鲁伊"><div class="job job5"></div><span>基本套牌</span></div>
+           <div class="card" job="法师"><div class="job job6"></div><span>基本套牌</span></div>
+           <div class="card" job="术士"><div class="job job7"></div><span>基本套牌</span></div>
+           <div class="card" job="战士"><div class="job job8"></div><span>基本套牌</span></div>
+           <div class="card" job="牧师"><div class="job job9"></div><span>基本套牌</span></div>
+       </div>
+       <div class="enemy">
+            <h1>进行匹配</h1>
+            
+       </div>
+        <div class="start">
+            <% if(!battle) {%>
+            <div class="btn" onclick="begin()" id="btn_match">开始匹配</div>
+            <div class="btn" id="btn_matching" style="display: none;">匹配中</div>
+            <%}else{%>
+            <a class="btn" href="/play">继续</a>
+            <%}%>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var time = 0;
+        function begin() {
+            var n1 = $(".card.selected").attr("job");
+            time++;
+            if (time > 150) {
+                time = 0;
+                $("#btn_match").show();
+                $("#btn_matching").hide();
+                return;
+            }
+            $("#btn_match").hide();
+            $("#btn_matching").show().text("匹配中(" + time + ")");
+            server("legend.practice.beginFight", n1, function (d) {
+                if (!d) {
+                    setTimeout(function () {
+                        begin();
+                    }, 2000);
+                    return;
+                };
+                location = "/play";
+            });
+        };
+
+        $(function () {
+            $(".card").click(function () {
+                $(".card").removeClass("selected");
+                $(this).addClass("selected");
+            });
+        });
+    </script>
+
+</body>
+</html>
