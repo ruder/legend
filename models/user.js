@@ -19,13 +19,11 @@ User.prototype.save = function (callback) {
     db.open("users", function (err, dbclose, collection) {
         if (err) {
             callback(err);
-            dbclose();
             return;
         }
         collection.insert(u, { safe: true }, function (err, user) {
             if (err) {
                 callback(err);
-                dbclose();
                 return;
             }
             dbclose();
@@ -38,13 +36,11 @@ User.get = function (name, callback) {
     db.open("users", function (err, dbclose, collection) {
         if (err) {
             callback(err);
-            dbclose();
             return;
         }
         collection.findOne({ name: name }, function (err, user) {
             if (err) {
                 callback(err);
-                dbclose();
                 return;
             }
             dbclose();
