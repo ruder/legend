@@ -2,10 +2,11 @@
 var Db = require('mongodb').Db;
 var Server = require('mongodb').Server;
 var db_name = 'LsnJeQhWzSfDoGidpuXC';                  // 数据库名，从云平台获取
-var db_host = process.env.BAE_ENV_ADDR_MONGO_IP;      // 数据库地址
-var db_port = +process.env.BAE_ENV_ADDR_MONGO_PORT;   // 数据库端口
-var username = process.env.BAE_ENV_AK;                 // 用户名
-var password = process.env.BAE_ENV_SK;                 // 密码    
+var db_host = process.env.BAE_ENV_ADDR_MONGO_IP || '127.0.0.1';      // 数据库地址
+var db_port = +process.env.BAE_ENV_ADDR_MONGO_PORT || 27017 ;   // 数据库端口
+var username = process.env.BAE_ENV_AK || 'sa';                 // 用户名
+var password = process.env.BAE_ENV_SK || 'sa';                 // 密码    
+
 
 
 

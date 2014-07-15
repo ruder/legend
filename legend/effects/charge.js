@@ -1,4 +1,4 @@
-var BaseEffect = require("../../legend/effects/baseeffect.js");
+﻿var BaseEffect = require("../../legend/effects/baseeffect.js");
 var Events = require("../../legend/event.js");
 var util = require("../../util.js");
 
