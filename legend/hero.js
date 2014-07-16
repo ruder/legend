@@ -3,14 +3,14 @@ var Action = require("../legend/action.js");
 var Minion = require("../legend/minion.js");
 var util = require("../util.js");
 
-var Hero = function (player, name, blood, race, weapon, skill) {
+var Hero = function (player, name, blood, race, weapon, skill, imageid) {
     Minion.call(this, name, race, 0, blood, null, player, []);
     this.ishero = true;
     this.id = undefined;
     this.weapon = weapon;
     this.skill = skill;
     this.guard = 0;
-
+    this.imageid = imageid;
     this.skillUsed = false;
     if (this.weapon)
         this.attack = this.weapon.attack;

@@ -1,4 +1,24 @@
 {
-    "main": "app.js"
+  "main": "app.js",
+  "name": "HearthStone_JS",
+  "description": "山寨炉石",
+  "version": "0.0.1",
+  "dependencies": {
+    "connect-memcache": "*",
+    "ejs": "^1.0",
+    "express": "^3.12",
+    "mongodb": "^1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruder/legend"
+  },
+  "keywords": [
+    "HearthStone"
+  ],
+  "author": "ruder",
+  "bugs": {
+    "url": "https://github.com/ruder/legend/issues"
+  },
+  "homepage": "https://github.com/ruder/legend"
 }
-

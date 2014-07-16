@@ -264,6 +264,7 @@ client.field = function (callback, req) {
         blood: sp.hero.blood,
         guard: sp.hero.guard,
         attack: sp.hero.attack,
+        imageid: sp.hero.imageid,
         power: sp.power,
         maxpower: sp.maxpower
     };
@@ -289,6 +290,7 @@ client.field = function (callback, req) {
         blood: enemy.hero.blood,
         guard: enemy.hero.guard,
         attack: enemy.hero.attack,
+        imageid: enemy.hero.imageid,
         power: enemy.power,
         maxpower: enemy.maxpower
     };

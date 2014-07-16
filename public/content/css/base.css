@@ -64,100 +64,261 @@ p,td{    padding:3px;}
 
 
 
-.field{ z-index: 1; background: #f8f8f8; position: fixed; z-index: 1; bottom: 0px;left: 0px;right: 0px; top: 0px; }
-.field .area{ z-index: 2; position: fixed; background:#fff; border: solid 2px #09c; margin: 0px 50px; left: 50px; right: 50px; top: 50%; margin-top: -190px; height: 300px;}
-.field .area-hover{border: solid 1px #d54;}
-.field .area-active{ border: solid 5px #d54;}
+.field{background: #f8f8f8 url(../images/field/STW_Table.png) center top; position: fixed; z-index: 1; bottom: 0px;left: 0px;right: 0px; top: 0px; min-height: 560px; }
+.field .ground{background: url(../images/field/ground.png) center; position:absolute; top:280px; left:280px; right: 280px; bottom: 280px;}
+.field .groundCorner-1{background: url(../images/field/groundCorners_1.png) no-repeat 0 0; width: 280px; height:280px; position:absolute; left:0; top:0;}
+.field .groundCorner-2{background: url(../images/field/groundCorners_2.png) repeat-x 0 0; height:280px; position:absolute; top:0; left:280px; right: 280px;}
+.field .groundCorner-3{background: url(../images/field/groundCorners_3.png) no-repeat 100% 0; width: 280px; height:280px; position:absolute; top:0; right:0;}
+.field .groundCorner-4{background: url(../images/field/groundCorners_4.png) repeat-y 0 0; width:280px; position:absolute; left:0; top:280px; bottom: 280px;}
+.field .groundCorner-6{background: url(../images/field/groundCorners_6.png) repeat-y 0 0; width:280px; position:absolute; right:0; top:280px; bottom: 280px;}
+.field .groundCorner-7{background: url(../images/field/groundCorners_7.png) no-repeat 0 100%; width: 280px; height:280px; position:absolute; left:0; bottom:0;}
+.field .groundCorner-8{background: url(../images/field/groundCorners_8.png) repeat-x 0 0; height:280px; position:absolute; bottom:0; left:280px; right: 280px;}
+.field .groundCorner-9{background: url(../images/field/groundCorners_9.png) no-repeat 100% 100%; width: 280px; height:280px; position:absolute; right:0; bottom:0;}
+.field .frame-1{background: url(../images/field/frame_1.png) no-repeat 0 0; width: 400px; height:200px; position: absolute;  left:50%; top:0; margin-left: -200px;}
+.field .frame-2{background: url(../images/field/frame_2.png) repeat-y 0 center; width: 100px; position: absolute;  left:0px; top:200px; bottom: 200px;}
+.field .frame-3{background: url(../images/field/frame_3.png) no-repeat 0 0; width: 100px; height:420px; position: absolute;  right:0; top:50%; margin-top: -210px;}
+.field .frame-4{background: url(../images/field/frame_4.png) no-repeat 0 0; width: 400px; height:240px; position: absolute;  left:50%; bottom:0; margin-left: -200px;}
 
-.field .surrenderbtn{ z-index: 2; position: fixed; background: #999; color: #fff; text-align:center;  line-height: 30px; width: 50px; height: 30px; left: 5px; bottom: 5px; cursor: pointer;}
-.field .nextbtn{  z-index: 2; position: fixed; background: #999; color: #fff; text-align:center;  line-height: 30px; width: 80px; height: 30px; top: 50%; margin-top: -50px; right: 10px;}
-.field .turnbtn{ background: #d54; cursor: pointer;}
-.field .turnbtn:hover{background: #c43;}
-.field .turnbtn:active{ background: #a21; }
-.field .trustcardpanel{ z-index: 2; position: fixed; width: 40px; top: 0px; bottom: 0px; left: 0px; overflow: hidden; border-right: dashed 1px #eee; }
-.field .trustcardpanel span{border-left: solid 2px #f8f8f8; cursor: pointer;  display: block; line-height: 26px; padding:0 5px; width: 28px; overflow: hidden; overflow: hidden; height:26px; border-bottom: dotted 1px #eee;}
-.field .trustcardpanel .self{ border-left: solid 2px #09c; }
-.field .trustcardpanelimg{ position: fixed; top: 0px; left: 50px; z-index: 10;}
-.cardpool{z-index: 3; margin: 0 auto; text-align: center; left: 50%; position: fixed;  height: 125px; }
-.heropanel{z-index: 4; position: fixed; left: 50%; top: 50%; height: 80px; width: 280px; margin-left: -140px; text-align: center; }
-.minionpool{z-index: 6; margin: 0 auto; text-align: center; left: 50%; top:50%; position: fixed;  height: 110px; }
-.cardheap{ z-index: 2; position: fixed; width: 30px; height: 100px; border: solid 1px #ddd; background: #fff; color: #666; text-align: center; right: -4px; top: 50%; line-height: 100px;}
-.powerpanel{ z-index: 2;position: fixed; right: 0px; height: 20px; width: 280px; }
-.powerpanel span{ display: block; float: left; height: 10px; width: 10px; margin: 5px; background: #eee; }
-.powerpanel font{ display: block; float: left; height: 20px; line-height: 20px; width: 70px; text-align: right;font-size: 14px; margin-right: 10px;}
-.powerpanel .active{ background: #09c;}
-.powerpanel .lost{ background: #ccc; }
+.field .area{ z-index: 2; position: absolute; background:url(../images/transparent.png); border: solid 0px #09c; left: 90px; right: 80px; top: 150px; bottom: 160px;}
+.field .area-hover{border: solid 0px #d54;}
+.field .area-active{ border: solid 0px #d54;}
+
+.field .surrenderbtn{ z-index: 2;position: absolute; background: url(../images/actors/leave_btn.png) no-repeat 0 0;  text-align:center; text-indent: -99em;  line-height: 33px; width: 107px; height: 37px; left: 30px; bottom: 33px; cursor: pointer;}
+.field .nextbtn{  z-index: 2; position: absolute; background: url(../images/actors/btn_turn_end.png) no-repeat 0 0; text-align:center; text-indent: -99em; overflow: hidden;  line-height: 50px; width: 100px; height: 55px; top: 50%; margin-top: -50px; right: 30px;}
+.field .turnbtn{ background:url(../images/actors/btn_turn_end_on.png) no-repeat 0 0; cursor: pointer;}
+.field .turnbtn:hover{}
+.field .turnbtn:active{ }
+.field .trustcardpanel{ z-index: 2; position: absolute; width: 40px; top: 155px; bottom: 165px; left: 28px; overflow: hidden; }
+.field .trustcardpanel span{ position: relative; left: 0; top: 0;cursor: pointer; display: block; font-size: 12px; text-indent: -99em; line-height: 40px; width: 40px; height:40px; overflow: hidden;}
+.field .trustcardpanel .curve{ border-radius: 2px; }
+.field .trustcardpanel .curve .self{ position: absolute;background:url(../images/actors/action_use_card_self.png) no-repeat 0 0;}
+.field .trustcardpanel .curve .side{ position: absolute;background:url(../images/actors/action_use_card_side.png) no-repeat 0 0;}
+
+.field .trustcardpanelimg{ position: absolute; top: 0px; left: 50px; z-index: 10;}
+.cardpool{z-index: 9; margin: 0 auto; text-align: center; left: 50%; position: absolute;  height: 125px; }
+.heropanel{
+height: 110px; text-align: center; }
+
+.minionpool{z-index: 6; margin: 0 auto; text-align: center; left: 50%; position: absolute;  height: 110px; }
+.cardheap{ z-index: 2; position: absolute; width: 130px; height: 130px;text-align: center; right: -30px; top: 50%; line-height: 120px;
+font-size: 18px; color: #fff; font-family: 'Britannic Bold'; 
+text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000; 
+
+}
+.powerpanel{ z-index: 2;position: absolute; right: 28px; height: 20px; width: 250px; }
+.powerpanel span{ display: block; float: left; height: 20px; width: 20px; margin: 0; background: url(../images/actors/icon_energy_empty.png) no-repeat 0 0; }
+.powerpanel font{ display: block; float: left; height: 20px; line-height: 19px; width: 45px; text-align: center;font-size: 14px; margin-right: 5px; 
+	font-family: 'Britannic Bold'; color: #fff;text-shadow: 1px 0px 0px #000, -1px 0px 0px #000, 0px 1px 0px #000, 0px -1px 0px #000; 
+}
+.powerpanel .active{ background: url(../images/actors/icon_energy_normal.png) no-repeat 0 0;}
+.powerpanel .lost{ background: url(../images/actors/icon_energy_lost.png) no-repeat 0 0; }
 
 
 
 .playerpanel{}
-.playerpanel .cardpool{ bottom: 20px; height: 130px; }
-.playerpanel .heropanel{ margin-top: 80px; z-index: 5;}
-.playerpanel .minionpool{ margin-top: -40px; }
-.playerpanel .powerpanel{ bottom: 0px;}
-.playerpanel .cardheap{ margin-top:30px; }
+.playerpanel .cardpool{ bottom: -50px; height: 130px; }
+.playerpanel .heropanel{ margin-top: 80px; z-index: 3;}
+.playerpanel .minionpool{  bottom:190px; }
+.playerpanel .powerpanel{ bottom: 40px;}
+.playerpanel .cardheap{ margin-top:-5px; }
 .enemypanel{}
 .enemypanel .cardpool{ top: -80px; }
-.enemypanel .heropanel{ margin-top: -250px;}
-.enemypanel .minionpool{ margin-top: -150px; }
-.enemypanel .powerpanel{ top: 0px;}
-.enemypanel .cardheap{ margin-top:-210px; }
+.enemypanel .minionpool{  top:170px;  }
+.enemypanel .powerpanel{ top: 30px;}
+.enemypanel .cardheap{ margin-top:-170px;  }
+.playerpanel .many_cards{
+	background: url(../images/actors/battle_cardSet_Hud_0.png) no-repeat 0px 0px;	
+}
+.playerpanel .some_cards{
+	background: url(../images/actors/battle_cardSet_Hud_1.png) no-repeat 0px 0px;	
+}
+.playerpanel .few_cards{
+	background: url(../images/actors/battle_cardSet_Hud_2.png) no-repeat 0px 0px;	
+}
+.playerpanel .none_cards{
+	background: none;	
+}
+.enemypanel .many_cards{
+	background: url(../images/actors/battle_cardSet_0.png) no-repeat 0px 0px;
+}
+.enemypanel .some_cards{
+	background: url(../images/actors/battle_cardSet_1.png) no-repeat 0px 0px;
+}
+.enemypanel .few_cards{
+	background: url(../images/actors/battle_cardSet_2.png) no-repeat 0px 0px;
+}
+.enemypanel .none_cards{
+	background: none;
+}
 
-.heropanel .face{ height: 80px; width: 100px; border: solid 2px #09c; float:left; margin: 2px 10px; background: #f8f8f8; position: relative;}
-.heropanel h1{ line-height: 28px;font-weight: normal; border-bottom: dotted 1px #eee; height: 28px; width: 100px;overflow: hidden; font-size: 14px;}
-.heropanel span{position: absolute;color: #fff;display: block;width: 30px;height: 30px;line-height: 30px;text-align: center;font-weight: bold; font-size: 20px;}
-.heropanel .attack{bottom: -2px;left: -2px; background: #d54; }
-.heropanel .blood{ bottom: -2px;right: -2px; background: #09c;}
+.heropanel .face{ height: 110px; width: 100px; 
+	position: absolute; left: 50%;
+	margin-left: -50px;
+	z-index: 6;
+}
+.playerpanel .heropanel .face{bottom: 90px;}
+.enemypanel .heropanel .face{top: 50px;}
+.heropanel .face .curve{
+	height: 100px; width: 90px;	border-radius: 190px 190px 4px 4px;	overflow: hidden;
+	border: 2px solid #ccc;
+	position: absolute; left: 3px; top: 4px;
+}
+.heropanel .face .state,.heropanel .face .state i{width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
+.heropanel .face .state .normal{
+	background: url(../images/actors/HeroFrame.png) no-repeat center;
+}
+.heropanel h1{ display: none; line-height: 28px;font-weight: normal; border-bottom: dotted 1px #eee; height: 28px; width: 100px;overflow: hidden; font-size: 14px;}
+.heropanel span{position: absolute;
+ font-size: 20px;	width: 50px;height: 50px;line-height: 50px;
+color: #fff; font-family: 'Britannic Bold'; text-align: center; text-indent: 0px;
+text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000; 
+}
+.heropanel .blood{
+bottom: -15px;
+right: -25px;
+background: url(../images/actors/hero_health_icon.png) no-repeat 0px 0px;
+}
+.heropanel .attack{
+bottom: -15px;
+left: -25px;
+background: url(../images/actors/hero_attack_icon.png) no-repeat 0px 0px;
+
+}
 .heropanel .guard{ bottom: 36px;right: -2px; background: #ccc; width: 16px; height: 16px; line-height: 16px; font-size: 12px; }
-.heropanel .weapon{ height: 60px; width: 60px; float:left; position: relative; border: solid 2px #ddd; margin-top: 2px; background: #f8f8f8; }
-.heropanel .weapon span{ background: #ccc; font-size: 12px; width: 16px; height: 16px; line-height: 16px; }
-.heropanel .skill{height: 60px; width: 60px; float:left;  position: relative; border: solid 2px #ddd; margin-top: 2px; background: #f8f8f8; }
-.heropanel .skill p{ color: #999; line-height: 20px; line-height: 60px; height: 60px; overflow: hidden; }
+.heropanel .weapon{height: 100px; width: 100px; position: absolute;background: url(../images/actors/weapon_frame_open.png) no-repeat 0 0;
+	left: 50%; margin-left: -160px;
+ }
+.playerpanel .heropanel .weapon{bottom: 95px;}
+.enemypanel .heropanel .weapon{top: 75px;}
+
+.heropanel .weapon span{ font-size: 16px; width: 30px; height: 30px; line-height: 30px; }
+.heropanel .weapon .attack{bottom: 0px;left: 0px;  background: url(../images/actors/weapon_attack_icon.png) no-repeat 0 0;}
+.heropanel .weapon .blood{ bottom: 0; right: 0; background: url(../images/actors/weapon_durable_icon.png) no-repeat 0 0;}
+.heropanel .skill{height: 100px; width: 100px; position: absolute; background: url(../images/actors/skill_frame_open.png) no-repeat 0 0;
+left: 50%; margin-left: 60px; }
+.playerpanel .heropanel .skill{bottom: 95px;}
+.enemypanel .heropanel .skill{top: 75px;}
+.heropanel .skill p{ 
+color: #806400;
+line-height: 18px;
+font-size: 16px;
+width: 40px;
+text-align: center;
+margin: 28px 0 0 26px;
+overflow: hidden;
+ }
 .heropanel .self_skill {cursor: pointer;}
-.heropanel .self_skill:hover{ background: #09c; color: #fff; border-color: #09c; }
-.heropanel .self_skill:hover p{ color: #fff;}
-.heropanel .cost{ top: -2px; left: -2px; background: #09c; width: 16px; height: 16px; line-height: 16px; font-size: 12px; }
-.enemypanel .heropanel .weapon,
-.enemypanel .heropanel .skill { margin-top: 22px;  }
+.heropanel .self_skill:hover{ color: #fff; border-color: #09c; }
+.heropanel .self_skill:hover p{ color: #000;}
+.heropanel .cost{ top: 0; left: 33px; background: url(../images/actors/skill_cost_icon.png) no-repeat 0 0; width: 30px; height: 30px; line-height: 30px; font-size: 24px; 
+color: #fff; font-family: 'Britannic Bold'; text-align: center; text-indent: 0px;
+text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000; 
+}
 
-.field .card{ float: left; height: 120px;width: 90px;margin: 5px;position: relative;background: #fff;  cursor:pointer; }
-.field .card h1{line-height: 28px;padding: 0 15px;font-weight: normal;border-bottom: dotted 1px #ddd; padding-left: 18px; height: 28px; width: 60px;overflow: hidden;}
-.field .card span{position: absolute;color: #fff;display: block;width: 16px;height: 16px;line-height: 16px;text-align: center;}
-.field .card .cost{top: -2px; left: -2px; background: #09c;}
-.field .card .attack{bottom: -2px; left: -2px; background: #ccc; font-weight: bold;}
-.field .card .blood{bottom: -2px; right: -2px; background: #ccc; font-weight: bold; }
-.field .card p{color: #999;padding: 5px;line-height: 16px;text-align: center;}
-.field .card img {width: 110px;margin-top: -30px;margin-left: -8px;}
-.field .card .detail{height: 120px;width: 90px;position: relative;border: solid 2px #ccc;}
-.field .minioncard img{width: 107px; margin-top: -25px;}
 
-.field .minion{ float: left; border: solid 1px #f8f8f8; height: 80px;width: 90px;margin: 5px;position: relative;background: #f8f8f8;}
+.field .card{ float: left; height: 115px;width: 83px;margin: 0px;position: relative;  cursor:pointer; z-index: 1; }
+.field .card .litimg {width: 83px; height: 115px;position: absolute; z-index: 2;}
+.field .card .detail{height: 345px;width: 250px;position: absolute; left: -83px; top:-300px; z-index: 1;}
+.field .card h1{ display: none;line-height: 28px;padding: 0 15px;font-weight: normal;border-bottom: dotted 1px #ddd; padding-left: 18px; height: 28px; width: 60px;overflow: hidden;}
+.field .card span{position: absolute;color: #fff; font-family: 'Britannic Bold'; font-size: 50px; display: block;width: 100px;height: 100px;line-height: 80px;text-align: center; text-indent: -15px;
+text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000; 
+}
+.field .card .cost{top: -7px; left: -9px; background:url(../images/actors/card_cost_icon.png) no-repeat -10px -10px;}
+.field .card .attack{bottom: -30px; left: -2px;  background:url(../images/actors/minion_attack_icon.png) no-repeat -10px -10px;}
+.field .card .blood{bottom: -30px; right: -35px;  background:url(../images/actors/minion_health_icon.png) no-repeat -10px -10px;}
+.field .card p{ display: none;color: #999;padding: 5px;line-height: 16px;text-align: center;}
+.field .minioncard .litimg{margin-top: 0px;}
+.field .minioncard .cost{top: -3px; left: -6px;}
+
+.field .minion{ float: left;  height: 90px;width: 90px;margin: 0px;position: relative;background: transparent;}
 .field .charge{  border-width: 4px; margin: 2px; }
 .field .minion h1{ line-height: 28px;padding: 0 15px;font-weight: normal;border-bottom: dotted 1px #ddd;  height: 28px; width: 60px;overflow: hidden; }
-.field .minion span{position: absolute;color: #fff;display: block;width: 16px;height: 16px;line-height: 16px;text-align: center;}
-.field .minion .attack{bottom: -1px; left: -1px; background: #d54; font-weight: bold;}
-.field .minion .blood{bottom: -1px; right: -1px; background: #09c; font-weight: bold; }
-.field .minion .state{ padding: 5px; position: absolute; top: 20px; text-align: center; width: 80px; left: 0px; }
-.field .minion .state font{ line-height: 18px;  display: inline-block; padding: 0 2px; color: #09c; background: #fff; filter:alpha(opacity=80);	-moz-opacity:0.8;	-khtml-opacity: 0.8;	opacity: 0.8; }
+.field .minion span{position: absolute;color: #fff;display: block;width: 30px;height: 30px;text-align: center;
+color: #fff;line-height: 34px; font-size: 18px; font-family: 'Britannic Bold'; text-indent: 0px;
+text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000; 
+}
+.field .minion .attack{z-index: 20; bottom: 8px; left: 8px; background: url(../images/actors/minion_attack_icon_small.png); }
+.field .minion .blood{z-index: 20;bottom: 8px; right: 8px; background: url(../images/actors/minion_health_icon_small.png); }
+.field .minion .state{position: absolute; width: 100%; height: 100%; }
+.field .minion .state i{position: absolute; left: 0; width: 100%; height: 100%; text-indent: -99em; overflow: hidden;}
+/*普通状态*/
+
+.field .minion .state .normal{
+	z-index: 2;
+	background: url(../images/actors/game_minion_1_1.png) no-repeat center;
+}
+/*嘲讽*/
+.field .minion .state .taunt{
+	z-index: 4;
+	background: url(../images/actors/game_minion_2_1.png) no-repeat center;
+}
+/*风怒*/
+.field .minion .state .windfury{
+	z-index: 6;
+	background: url(../images/actors/game_minion_windfury.png) no-repeat center;
+}
+/*圣盾*/
+.field .minion .state .protection{
+	z-index: 10;
+	background: url(../images/actors/game_minion_protection.png) no-repeat center;
+}
+/*潜行*/
+.field .minion .state .stealth{
+	z-index: 14;
+	background: url(../images/actors/game_minion_stealth.png) no-repeat center;
+}
+/*冻结*/
+.field .minion .state .freeze{
+	z-index: 16;
+	background: url(../images/actors/game_minion_freeze.png) no-repeat center;
+}
+
+/*沉默*/
+.field .minion .state .silenced{
+	z-index: 18;
+	background: url(../images/actors/game_minion_silenced.png) no-repeat center;
+}
+/*休息*/
+.field .minion .state .rest{
+	z-index: 20;
+	background: url(../images/actors/state_Zzz.gif) no-repeat center;
+}
+/*发光*/
+.field .minion.glow .curve{
+	box-shadow:0 0 12px #fff,0 0 12px #fff;
+}
+.field .face.glow .curve{
+	box-shadow:0 0 16px #fff,0 0 16px #fff,0 0 16px #fff;
+}
+
 .field .attackhelper{ cursor: pointer;}
-.field .minion-hover{ border-color: #d54;}
-.field .minion-active{ border-color: #d54; border-width: 2px; margin: 4px;}
-.field .hero-hover{ border-color: #d54; border-width: 1px; margin: 3px 11px;}
-.field .hero-active{ border-color: #d54; border-width: 2px; margin: 2px 10px;}
-.field .minion img{width: 180px; margin-top: -60px; margin-left: -44px;}
+.field .minion-hover .curve{ box-shadow:0 0 10px #fff,0 0 10px #fff,0 0 10px #fff; }
+.field .minion-active .curve{ box-shadow:0 0 16px #cfc,0 0 16px #cfc,0 0 16px #cfc;}
+.field .hero-hover .curve{ 	box-shadow:0 0 16px #fff,0 0 16px #fff,0 0 16px #fff; }
+.field .hero-active .curve{ box-shadow:0 0 24px #cfc,0 0 24px #cfc,0 0 24px #cfc; }
+.field .minion .curve{left:18px; top:2px; border:2px solid #ccc; border-radius: 80px; width:51px; height: 68px; overflow: hidden;position: absolute;}
 
 
 
-.field .hurt{ background: #d54; color: #fff; line-height: 30px; height: 30px; width: 60px; font-size: 20px;  top: 20px;position: absolute;left: 50%;margin-left: -30px; }
-.attack-helper{ width: 20px; height: 20px; background: #690; z-index: 30; position: fixed; }
+.field .hurt{ background: url(../images/actors/game_damage_bg.png) no-repeat center 0;
+ color: #fff; line-height: 90px; height: 100%; width: 100%; font-size: 24px; position: absolute;z-index:20;
+font-family: 'Britannic Bold'; text-indent: -5px;
+text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000; 
+}
+.field .cure{ background: url(../images/actors/game_heal_bg.png) no-repeat center 0;
+ color: #6f6; line-height: 90px; height: 100%; width: 100%; font-size: 24px; position: absolute;z-index:20;
+font-family: 'Britannic Bold'; text-indent: -5px;
+text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000; 
+}
+.attack-helper{ width: 40px; height: 20px; background:url(../images/actors/arrow.png) no-repeat center 0; z-index: 30; }
 .attack-helper2{ width: 20px; height: 20px; background: #690; z-index: 30; }
 
 .targetpanel{}
-.targetpanel .over{ position: fixed; top: 0px; bottom: 0px; left: 0px; right: 0px; background: #000;  z-index: 10;
+.targetpanel .over{ position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; background: #000;  z-index: 5;
     filter:alpha(opacity=40);	-moz-opacity:0.4;	-khtml-opacity: 0.4;	opacity: 0.4; }
-.targetpanel .item{ position: fixed; border: solid 2px #fff; z-index: 11; margin-left: -2px; margin-top: -2px; background: url(../images/transparent.gif);  cursor: pointer; }
-.targetpanel .item:hover{ margin-left: -5px; margin-top: -5px; border: solid 5px #fff;}
-.targetpanel .tptitle{ position: fixed; top: 40px; height: 40px; line-height: 40px; left: 0px; right: 0px; text-align: center; color: #fff; font-size: 20px; z-index: 11; }
+.targetpanel .item{ position: absolute; border: solid 0px #fff; z-index: 11;  background: url(../images/transparent.gif);  cursor: pointer; }
+.targetpanel .item:hover{ border: solid 0px #fff;}
+.targetpanel .tptitle{ position: absolute; top: 23px; height: 40px; line-height: 40px; left: 0px; right: 0px; text-align: center; color: #fff; font-size: 20px; z-index: 11; }
 .cardshow{ position: fixed; top: 0px; left: 100px; z-index: 10;}
 
 
@@ -165,18 +326,22 @@ p,td{    padding:3px;}
 .round_win,
 .waitepanel{position: fixed; z-index: 100; top: 0px; bottom: 0px; left: 0px; right: 0px; background: #f8f8f8; border-top:solid 1px #09c; }
 .round_win .round_win_panel,
-.waitepanel div{display: block;position: fixed; z-index: 101; top: 50%; left: 50%; width: 600px; height: 100px; margin-left: -300px; margin-top: -60px; line-height: 50px; text-align: center; color: #666; font-size: 14px;}
+.waitepanel div{display: block;position: absolute; z-index: 101; top: 50%; left: 50%; width: 600px; height: 100px; margin-left: -300px; margin-top: -60px; line-height: 50px; text-align: center; color: #666; font-size: 14px;}
 .round_win .btn,
-.waitepanel .btn{  display: block; margin: 0 auto; }
+.waitepanel .btn{  display: block; margin: -200px auto 0; }
 .choosepanel{position: fixed; z-index: 100; top: 0px; bottom: 0px; left: 0px; right: 0px; background: #f8f8f8; border-top:solid 1px #09c;}
 .choosepanel h1{ line-height: 100px; text-align: center; font-size: 16px; }
 .choosepanel .cardpanel{ margin: 10px auto;  }
 .round_win img,
 .round_win div{display: block ; margin: 0 auto;}
-.round_win .round_title{ line-height: 50px; height: 50px; text-align: center; width: 200px; font-size: 40px;font-weight: bold; margin-bottom: 20px;}
-.round_win .round_title_win{ color: #09c;  }
-.round_win .round_title_lost{ color: #d54; }
-.round_win .round_win_panel{ height: 300px; margin-top: -150px;}
+.round_win .round_title{top: 250px;
+width: 100%;
+position: absolute; line-height: 50px; height: 50px; text-align: center; font-size: 36px;font-weight: bold;
+text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000; 
+}
+.round_win .round_title_win{ color: #FEC;  }
+.round_win .round_title_lost{ color: #d54; top:70px; }
+.round_win .round_win_panel{ height: 600px; margin-top: -300px;}
 
 
 .btn{ text-decoration: none; height: 30px; line-height: 30px; text-align: center; display: inline-block; cursor: pointer; width: 80px; background: #d54; color: #fff;}
