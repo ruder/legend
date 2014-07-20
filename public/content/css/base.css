@@ -117,12 +117,21 @@ text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px
 
 .playerpanel{}
 .playerpanel .cardpool{ bottom: -50px; height: 130px; }
-.playerpanel .heropanel{ margin-top: 80px; z-index: 3;}
+.playerpanel .heropanel{ position: absolute;
+left: 50%;
+bottom: 0; z-index: 3;
+	
+}
 .playerpanel .minionpool{  bottom:190px; }
 .playerpanel .powerpanel{ bottom: 40px;}
 .playerpanel .cardheap{ margin-top:-5px; }
 .enemypanel{}
 .enemypanel .cardpool{ top: -80px; }
+.enemypanel .heropanel{ position: absolute;
+left: 50%;
+top: 0; z-index: 3;
+	
+}
 .enemypanel .minionpool{  top:170px;  }
 .enemypanel .powerpanel{ top: 30px;}
 .enemypanel .cardheap{ margin-top:-170px;  }
@@ -152,8 +161,8 @@ text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px
 }
 
 .heropanel .face{ height: 110px; width: 100px; 
-	position: absolute; left: 50%;
-	margin-left: -50px;
+	position: absolute;
+	left: -50px;
 	z-index: 6;
 }
 .playerpanel .heropanel .face{bottom: 90px;}
@@ -311,7 +320,6 @@ font-family: 'Britannic Bold'; text-indent: -5px;
 text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000; 
 }
 .attack-helper{ width: 40px; height: 20px; background:url(../images/actors/arrow.png) no-repeat center 0; z-index: 30; }
-.attack-helper2{ width: 20px; height: 20px; background: #690; z-index: 30; }
 
 .targetpanel{}
 .targetpanel .over{ position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; background: #000;  z-index: 5;
