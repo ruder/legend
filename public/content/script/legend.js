@@ -1,3 +1,21 @@
+createjs.Sound.registerSound({src:"content/audio/FX_MinionSummon_Drop.ogg", id:"普通随从置入场上"});
+createjs.Sound.registerSound({src:"content/audio/FX_MinionSummonMedium_Drop.ogg", id:"中等随从置入场上"});
+createjs.Sound.registerSound({src:"content/audio/FX_MinionSummonLarge_Drop.ogg", id:"大型随从置入场上"});
+createjs.Sound.registerSound({src:"content/audio/Minion_Death_02.ogg", id:"随从被打碎"});
+createjs.Sound.registerSound({src:"content/audio/Minion_Death_04.ogg", id:"随从被打很碎"});
+createjs.Sound.registerSound({src:"content/audio/Minion_Death_06.ogg", id:"随从被打非常碎"});
+createjs.Sound.registerSound({src:"content/audio/FX_Minion_AttackImpact.ogg", id:"普通随从攻击"});
+createjs.Sound.registerSound({src:"content/audio/FX_Minion_AttackImpactMid.ogg", id:"中等随从攻击"});
+createjs.Sound.registerSound({src:"content/audio/FX_Minion_AttackImpactLarge.ogg", id:"大型随从攻击"});
+createjs.Sound.registerSound({src:"content/audio/hero_portrait_crack_1.ogg", id:"英雄头像裂开"});
+createjs.Sound.registerSound({src:"content/audio/hero_portrait_explode_1.ogg", id:"英雄头像炸掉"});
+createjs.Sound.registerSound({src:"content/audio/Physical_Targeted_Impact_01.ogg", id:"物理撞击"});
+createjs.Sound.registerSound({src:"content/audio/tavern_crowd_play_reaction_quite_positive_5.ogg", id:"围观者反应较强烈"});
+createjs.Sound.registerSound({src:"content/audio/tavern_crowd_play_reaction_positive_5.ogg", id:"围观者反应强烈"});
+createjs.Sound.registerSound({src:"content/audio/tavern_crowd_play_reaction_very_positive_5.ogg", id:"围观者反应很强烈"});
+createjs.Sound.registerSound({src:"content/audio/victory_screen_start.ogg", id:"胜利的欢呼"});
+
+
 var movies = {};
 movies.timeStep = 20;
 movies.showTips = function ($dom,classname,text,cb) {
@@ -381,6 +399,21 @@ Minion.prototype.beAttack = function (id) {
 };
 Minion.prototype.hurt = function (count, cb) {
     var me = this;
+	//按伤害大小输出不同的声音
+	if(count>=1 && count <5){
+		createjs.Sound.play("普通随从攻击");
+	}else if(count>=5 && count <8){
+		createjs.Sound.play("中等随从攻击");
+	}else if(count>=8){
+		createjs.Sound.play("大型随从攻击");
+	}
+	if(count>=8 && count <11){
+		setTimeout(function(){createjs.Sound.play("围观者反应较强烈");},500);
+	}else if(count>=11 && count <14){
+		setTimeout(function(){createjs.Sound.play("围观者反应强烈");},500);
+	}else if(count>=14){
+		setTimeout(function(){createjs.Sound.play("围观者反应很强烈");},500);
+	}
     movies.showTips(this.$dom, "hurt", 0 - count, function () {
         me.d.blood -= count;
         me.$dom.find(".blood").text(me.d.blood);
@@ -398,6 +431,7 @@ Minion.prototype.cure = function (count, cb) {
 Minion.prototype.die = function (cb) {
     var me = this;
     this.$dom.effect("shake", {}, 20 * movies.timeStep, function () {
+		createjs.Sound.play("随从被打碎");
         me.pool.remove(me.id);
         cb();
     });
@@ -591,8 +625,24 @@ HeroPanel.prototype.beAttack = function (id) {
         //window.field.sync();
     });
 };
+
 HeroPanel.prototype.hurt = function (count, cb) {
     var me = this;
+	//按伤害大小输出不同的声音
+	if(count>=1 && count <5){
+		createjs.Sound.play("普通随从攻击");
+	}else if(count>=5 && count <8){
+		createjs.Sound.play("中等随从攻击");
+	}else if(count>=8){
+		createjs.Sound.play("大型随从攻击");
+	}
+	if(count>=8 && count <11){
+		setTimeout(function(){createjs.Sound.play("围观者反应较强烈");},500);
+	}else if(count>=11 && count <14){
+		setTimeout(function(){createjs.Sound.play("围观者反应强烈");},500);
+	}else if(count>=14){
+		setTimeout(function(){createjs.Sound.play("围观者反应很强烈");},500);
+	}
     movies.showTips(this.$face, "hurt", 0-count, function () {
         me.d.blood -= count;
         me.$face.find(".blood").text(me.d.blood);
@@ -1037,6 +1087,7 @@ Action.prototype.showWin = function (win) {
     var rw=$("<div class='round_win' ></div>").appendTo($("body"));
     var round_win = $("<div class='round_win_panel' ></div>").appendTo(rw);
     if (win) {
+ 		createjs.Sound.play("胜利的欢呼");
         $("<img src='content/images/actors/Victory.png' />").appendTo(round_win);
     }
     else {

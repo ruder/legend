@@ -1,4 +1,19 @@
-
+/*
+参数说明
+id:不要更改，与图片、音频关联
+name: 卡名称
+skill:技能，cardheap.js将该值作为键值，所以要修改必须同步修改cardheap
+type:技能 or 随从
+job: 所属职业
+race: 所属种族 如鱼人、野兽、图腾、海盗、恶魔、龙
+rate: 卡种类 普通、稀有、传说、史诗
+group: 基础、专家、任务
+mark: 格言
+get: 是否允许玩家获得
+cost: 费
+attack: 攻击力
+blood: 血量
+*/
 var cards= { 
     "EX1_607": { "id": "EX1_607", "name": "怒火中烧", "skill": "对一个随从造成1点伤害，该随从获得+2攻击力。", "type": "技能", "job": "战士", "race": "", "rate": "普通", "group": "专家", "mark": "吃得苦中苦，方为人上人。", "get": true, "cost": "", "attack": "", "blood": "" },
     "EX1_539": { "id": "EX1_539", "name": "杀戮命令", "cost": "3", "attack": "", "blood": "", "skill": "造成3点伤害，如果你拥有野兽，则改为造成5点伤害。", "type": "技能", "job": "猎人", "race": "", "rate": "普通", "group": "基础", "mark": "”咬死他！“，他下达了命令。", "get": true },
