@@ -7,7 +7,7 @@
     "connect-memcache": "*",
     "ejs": "^1.0",
     "express": "^3.12",
-    "mongodb": "^1.4"
+    "mongodb": "^3.6"
   },
   "repository": {
     "type": "git",
