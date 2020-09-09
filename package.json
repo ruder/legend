@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "dependencies": {
     "connect-memcache": "*",
-    "ejs": "^1.0",
+    "ejs": "^3.1",
     "express": "^3.12",
     "mongodb": "^3.6"
   },
